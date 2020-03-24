@@ -1,48 +1,41 @@
-var PortCollection = [];
+  
+var ShipCollection = [];
 
-class Port {
-    constructor(name, capacity) {
+class Ships {
+    constructor(name, length, width) {
         this.name = name;
-        this.capacity = capacity;
-        this.PierCollection = [];
+        this.size = [length, width];
     }
 
 
-    AddPort() {
-        PortCollection.push(this);
+    AddShip() {
+        ShipCollection.push(this);
     }
-    static ShowAllPorts() {
-        for (let i = 0; i < PortCollection.length; i++) {
-            console.log(PortCollection[i]);
-        }
+    EditShip(name, length, width) {
+        this.name = name;
+        this.size = [length, width];
     }
-    ShowAllPiersInPort() {
-        for (let i = 0; i < this.PierCollection.length; i++) {
-            console.log(this.PierCollection[i]);
-        }
-    }
-    DeletePort() {
+    DeleteShip() {
         let index;
-        for (var i = 0; i < PortCollection.length; i++) {
-            if (this.name === PortCollection[i]) {
+        for (var i = 0; i < ShipCollection.length; i++) {
+            if (this.name === ShipCollection[i]) {
                 index = i;
             }
         }
-        PortCollection.splice(index, 1);
+        ShipCollection.splice(index, 1);
     }
-    EditPort(name, capacity) {
-        this.name = name;
-        this.capacity = capacity;
-    }
-
-    static SearchPort(portName) {
-        for (let i = 0; i < this.Collection.length; i++) {
-            if (this.Collection[i].name === portName) {
-                console.log(this.Collection[i]);
+    static SearchShip(shipName) {
+        for (let i = 0; i < ShipCollection.length; i++) {
+            if (ShipCollection[i].name === shipName) {
+                console.log(ShipCollection[i]);
             }
         }
     }
-
+    static ShowAllShips() {
+        for (let i = 0; i < ShipCollection.length; i++) {
+            console.log(ShipCollection[i]);
+        }
+    }
 }
 
-module.exports = { Port, PortCollection }
+module.exports = { Ships, ShipCollection }

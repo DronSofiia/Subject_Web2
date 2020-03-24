@@ -1,7 +1,6 @@
-var text_mass = function() {
-    var text='hello word';
+var text_mass = function(text) {
     var mass=text.split(" ");
-    console.log(mass);
+    return mass;
  
 }
-text_mass();
+module.exports={text_mass}

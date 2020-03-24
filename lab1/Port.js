@@ -16,9 +16,9 @@ class Port {
             console.log(PortCollection[i]);
         }
     }
-    ShowAllPiersInPort() {
-        for (let i = 0; i < this.PierCollection.length; i++) {
-            console.log(this.PierCollection[i]);
+    ShowAllPirsInPort() {
+        for (let i = 0; i < this.PirsCollection.length; i++) {
+            console.log(this.PirsCollection[i]);
         }
     }
     DeletePort() {

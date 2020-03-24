@@ -19,4 +19,4 @@ var nsd=function(a,b){
     }
 return number;
 }
-console.log(nsd(28,28));
+module.exports={nsd};

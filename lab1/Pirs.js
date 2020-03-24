@@ -1,6 +1,6 @@
-var PierCollection = [];
+var PirsCollection = [];
 
-class Pier {
+class Pirs {
     constructor(name, capacity) {
         this.name = name;
         this.capacity = capacity;
@@ -8,17 +8,19 @@ class Pier {
     }
 
 
-    AddPier() {
-        PierCollection.push(this);
+    AddPirs() {
+        PirsCollection.push(this);
     }
-    DeletePier() {
+    
+    
+    DeletePirs() {
         let index;
-        for (var i = 0; i < PierCollection.length; i++) {
-            if (this.name === PierCollection[i]) {
+        for (var i = 0; i < PirsCollection.length; i++) {
+            if (this.name === PirsCollection[i]) {
                 index = i;
             }
         }
-        PierCollection.splice(index, 1);
+        PirsCollection.splice(index, 1);
     }
     static SearchShip(shipName) {
         for (let i = 0; i < ShipCollection.length; i++) {
@@ -27,17 +29,22 @@ class Pier {
             }
         }
     }
-    AddShipToPier(ship) {
+   
+   
+    AddShipToPirs(ship) {
         ShipCollection.push(ship);
     }
-    EditPier(name, capacity) {
+   
+   
+    EditPirs(name, capacity) {
         this.name = name;
         this.capacity = capacity;
     }
 
-    AddPierToPort(port) {
-        port.PierCollection.push(this);
+    
+    AddPirsToPort(port) {
+        port.PirsCollection.push(this);
     }
 }
 
-module.exports = { Pier, PierCollection }
+module.exports = { Pirs, PirsCollection }

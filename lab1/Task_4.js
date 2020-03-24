@@ -10,4 +10,4 @@ var randomMass=function(){
     return [massuv];
 
 }
-console.log(randomMass());
+module.exports={randomMass};

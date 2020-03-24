@@ -25,5 +25,7 @@ function SortName(us_1, us_2){
 
 var mass=[user_1,user_2,user_3,user_4]
 
-mass.sort(SortName);
-console.log(mass);
+module.exports = {
+    mass: mass,
+    SortName: SortName
+}

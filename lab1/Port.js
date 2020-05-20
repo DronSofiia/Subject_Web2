@@ -6,6 +6,9 @@ class Port {
         this.capacity = capacity;
         this.PierCollection = [];
     }
+    static getAllPort(){
+        return PortCollection
+    }
 
 
     AddPort() {

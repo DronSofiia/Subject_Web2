@@ -3,7 +3,7 @@
 const shipInPiersModel = new shipInPiers() // eslint-disable-line no-undef
 
 function initAddForm () {
-  const form = window.document.querySelector('#port-add-form')
+  const form = window.document.querySelector('#shipinpiers-add-form')
   form.addEventListener('submit', function (e) {
     e.preventDefault()
 
@@ -20,7 +20,7 @@ function initAddForm () {
 }
 
 function initList () {
-  window.jQuery('#port-list').DataTable({
+  window.jQuery('#shipinpiers-list').DataTable({
     data: shipInPiersModel.Select(),
     columns: [
       { title: 'ID', data: 'id' },
@@ -40,8 +40,8 @@ function initList () {
 }
 
 function initListEvents () {
-  document.addEventListener('portsListDataChanged', function (e) {
-    const dataTable = window.jQuery('#port-list').DataTable()
+  document.addEventListener('shipinpierssListDataChanged', function (e) {
+    const dataTable = window.jQuery('#shipinpiers-list').DataTable()
 
     dataTable.clear()
     dataTable.rows.add(e.detail)

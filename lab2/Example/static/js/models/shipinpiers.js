@@ -1,6 +1,6 @@
 class shipInPiers extends BaseModel { // eslint-disable-line no-unused-vars, no-undef
   constructor () {
-    super('ports')
+    super('shipinpierss')
     this.fields = this.fields.concat([
     	'name',
     	'piers'

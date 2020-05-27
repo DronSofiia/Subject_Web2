@@ -6,7 +6,7 @@ block prepend styles
 block content
   div(class='breadcrumb')
     li= title
-  form(id='port-add-form' name='port-add-form' class='form-inline' action='')
+  form(id='shipinpiers-add-form' name='shipinpiers-add-form' class='form-inline' action='')
     div(class='form-group')
       div(class='col-md-3')
         label(for='name') Name
@@ -21,7 +21,7 @@ block content
       div(class='col-md-12')
         button(type='submit' class='btn btn-primary') Create
     div.list-wrapper
-      table(id='port-list')
+      table(id='shipinpiers-list')
 block append scripts
   script(src='/static/js/models/shipinpiers.js')
   script(src='//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js')

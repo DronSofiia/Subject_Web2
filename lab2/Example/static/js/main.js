@@ -6,7 +6,7 @@ function initMainMenu () {
   if (oldActiveElement) {
     oldActiveElement.classList.remove('active')
   }
-  const newActiveElement = mainMenu.querySelector(`ul.nav li a[href^="${location.pathname}"]`)
+  const newActiveElement = mainMenu.querySelector(`ul.nav li a[href="${location.pathname}"]`)
   newActiveElement.parentElement.classList.add('active')
 }
 

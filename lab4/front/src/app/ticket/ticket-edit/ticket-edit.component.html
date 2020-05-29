@@ -1,0 +1,87 @@
+  <div class='col-md-6'>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()" id='ticket-edit-form' name='ticket-edit-form' class='form-horizontal' method="POST" action=''>
+      <input id="id" name="id" type="hidden" formControlName="id" value="{{ticket._id}}" class='form-control'>
+      <div class='form-group'>
+        <div class='col-md-3'>
+          <label for='number'>Number</label>
+        </div>
+        <div class='col-md-9'>
+          <input id='number' name='number' type='number' min=1 value="{{ticket.number}}" formControlName="number" class='form-control' [ngClass]="{'is-invalid': submitted && f.number.errors}"/>
+          <div *ngIf="submitted && f.number.errors" class="invalid-feedback">
+            <div *ngIf="f.number.errors.required">Ticket Number is required</div>
+          </div>
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <div class='col-md-3'>
+          <label for='price'>Price</label>
+        </div>
+        <div class='col-md-9'>
+          <input id='price' name='price' formControlName="price" type='number' value="{{ticket.price}}" step=0.01 min=0 class='form-control' [ngClass]="{'is-invalid': submitted && f.price.errors}"/>
+          <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+            <div *ngIf="f.price.errors.required">Ticket Price is required</div>
+          </div>
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <div class='col-md-3'>
+          <label for='passenger_id'>Passenger</label>
+        </div>
+        <div class='col-md-9'>
+          <select id='passenger_id' name='passenger_id' class='form-control' formControlName="passenger_id" [ngClass]="{'is-invalid': submitted && f.passenger_id.errors}">
+            <option *ngFor="let passenger of passengers"  value="{{passenger._id}}" selected="{{ticket.passenger._id == passenger._id}}">{{passenger.name}} {{passenger.surName}} {{passenger.passportID}}</option>
+          </select>
+          <div *ngIf="submitted && f.passenger_id.errors" class="invalid-feedback">
+            <div *ngIf="f.passenger_id.errors.required">Ticket Passenger is required</div>
+          </div>
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <div class='col-md-3'>
+          <label for='train_id'>Train</label>
+        </div>
+        <div class='col-md-9'>
+          <select id='train_id' name='train_id' class='form-control' formControlName="train_id" [ngClass]="{'is-invalid': submitted && f.train_id.errors}">
+            <option *ngFor="let train of trains"  value="{{train._id}}" selected="{{ticket.train._id == train._id}}">{{train.name}} {{train.route}} {{train.number}}</option>
+          </select>
+          <div *ngIf="submitted && f.train_id.errors" class="invalid-feedback">
+            <div *ngIf="f.train_id.errors.required">Ticket Train is required</div>
+          </div>
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <div class='col-md-3'>
+          <label for='seatNumber'>Seat Number</label>
+        </div>
+        <div class='col-md-9'>
+          <input id='seatNumber' name='seatNumber' type='number' value="{{ticket.seatNumber}}" min=1 max=1000 formControlName="seatNumber" class='form-control' [ngClass]="{'is-invalid': submitted && f.seatNumber.errors}"/>
+          <div *ngIf="submitted && f.seatNumber.errors" class="invalid-feedback">
+            <div *ngIf="f.seatNumber.errors.required">Ticket Seat Number is required</div>
+          </div>
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <div class='col-md-3'>
+          <label for='date'>Date</label>
+        </div>
+        <div class='col-md-9'>
+          <input id='date' name='date' type='date' formControlName="date" value="{{ticket.date}}" class='form-control' [ngClass]="{'is-invalid': submitted && f.date.errors}"/>
+          <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+            <div *ngIf="f.date.errors.required">Ticket Date is required</div>
+          </div>
+        </div>
+      </div>
+
+      <div class='form-group'>
+        <div class='col-md-12'>
+          <button [disabled]="loading" type='submit' class='btn btn-primary'>Edit</button>
+          <a routerLink="/ticket" >Cancel</a>
+        </div>
+      </div>
+    </form>
+  </div>

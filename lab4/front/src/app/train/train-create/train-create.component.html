@@ -1,0 +1,57 @@
+<section style="display: block;clear: both">
+<div class='col-md-6'>
+<form [formGroup]="createForm" (ngSubmit)="onSubmit()" id='train-add-form' name='train-add-form' class='form-horizontal' method="POST" action=''>
+<div class='form-group'>
+<div class='col-md-3'>
+<label for='name'>Name</label>
+</div>
+  <div class='col-md-9'>
+<input id='name' name='name' formControlName="name" class='form-control' [ngClass]="{'is-invalid': submitted && f.name.errors}"/>
+    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+      <div *ngIf="f.name.errors.required">Train Name is required</div>
+    </div>
+</div>
+</div>
+  <div class='form-group'>
+    <div class='col-md-3'>
+      <label for='route'>Route</label>
+  </div>
+  <div class='col-md-9'>
+<input id='route' name='route' formControlName="route"  class='form-control' [ngClass]="{'is-invalid': submitted && f.route.errors}"/>
+    <div *ngIf="submitted && f.route.errors" class="invalid-feedback">
+      <div *ngIf="f.route.errors.required">Train Route is required</div>
+    </div>
+</div>
+  </div>
+    <div class='form-group'>
+      <div class='col-md-3'>
+        <label for='number'>Number</label>
+    </div>
+      <div class='col-md-9'>
+<input id='number' name='number' type='number' min=1 formControlName="number" class='form-control' [ngClass]="{'is-invalid': submitted && f.number.errors}"/>
+        <div *ngIf="submitted && f.number.errors" class="invalid-feedback">
+          <div *ngIf="f.number.errors.required">Train Number is required</div>
+        </div>
+      </div>
+    </div>
+  <div class='form-group'>
+    <div class='col-md-3'>
+      <label for='seatsQuantity'>Seats Quantity</label>
+    </div>
+    <div class='col-md-9'>
+      <input id='seatsQuantity' name='seatsQuantity' type='number' min=1 max=1000 formControlName="seatsQuantity" class='form-control' [ngClass]="{'is-invalid': submitted && f.seatsQuantity.errors}"/>
+      <div *ngIf="submitted && f.seatsQuantity.errors" class="invalid-feedback">
+        <div *ngIf="f.seatsQuantity.errors.required">Train seats quantity is required</div>
+      </div>
+    </div>
+  </div>
+      <div class='form-group'>
+        <div class='col-md-12'>
+          <button [disabled]="loading" type='submit' class='btn btn-primary'>Create</button>
+          <button (click)="onRefresh()" class='btn btn-link'>Cancel</button>
+      </div>
+      </div>
+</form>
+</div>
+<div class='col-md-6'></div>
+</section>

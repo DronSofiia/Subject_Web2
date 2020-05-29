@@ -6,7 +6,10 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './http-errors/page-not-found.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LocationTypeModule } from './location-type/location-type.module';
+import { PassengerModule } from './passenger/passenger.module';
+import { TrainModule } from './train/train.module';
+import { TicketModule } from './ticket/ticket.module';
+import { ReportsModule } from './reports/reports.module';
 import './types';
 
 @NgModule({
@@ -18,7 +21,10 @@ import './types';
   imports: [
     BrowserModule,
     HttpClientModule,
-    LocationTypeModule,
+    PassengerModule,
+    TrainModule,
+    TicketModule,
+    ReportsModule,
     AppRoutingModule
   ],
   providers: [],

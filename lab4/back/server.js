@@ -12,6 +12,10 @@ const corsMiddleware = require('cors')
 const indexRoutes = require('./routes')
 const locationRoutes = require('./routes/location')
 const locationTypeRoutes = require('./routes/location_type')
+const passengerRoutes = require('./routes/passenger')
+const trainRoutes = require('./routes/train')
+const ticketRoutes = require('./routes/ticket')
+const reportsRoutes = require('./routes/reports')
 
 const app = express()
 
@@ -21,10 +25,14 @@ app.use(bodyParser.json())
 
 app.use(express.static(__dirname))
 
-app.use(corsMiddleware());
+app.use(corsMiddleware())
 app.use('/', indexRoutes)
 app.use('/location', locationRoutes)
 app.use('/location-type', locationTypeRoutes)
+app.use('/passenger', passengerRoutes)
+app.use('/train', trainRoutes)
+app.use('/ticket', ticketRoutes)
+app.use('/reports', reportsRoutes)
 
 app.use(notFoundMiddleware)
 

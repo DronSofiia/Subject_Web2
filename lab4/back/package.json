@@ -17,12 +17,13 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0"
+    "eslint-plugin-standard": "^4.0.0",
+    "nodemon": "^1.19.0"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.16.4",
     "express-validator": "^5.3.1",
     "mongoose": "^5.5.0",
     "morgan": "^1.9.1"

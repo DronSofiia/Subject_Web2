@@ -1,0 +1,16 @@
+<div class='col-md-6'>
+  <form [formGroup]="deleteForm" (ngSubmit)="onSubmit()" id='passenger-delete-form' name='passenger-delete-form' class='form-horizontal' method="POST" action=''>
+    <input id="id" name="id" type="hidden" formControlName="id" value="{{passenger._id}}" class='form-control'>
+    <div class='form-group'>
+      <div class='col-md-12'>
+        <strong>{{passenger.name}} {{passenger.surName}} {{passenger.passportID}}</strong> - Are you sure to delete this passenger?
+      </div>
+    </div>
+    <div class='form-group'>
+      <div class='col-md-12'>
+        <button type='submit' class='btn btn-primary'>Delete</button>
+        <a routerLink="/passenger" >Cancel</a>
+      </div>
+    </div>
+  </form>
+</div>

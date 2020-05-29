@@ -1,0 +1,29 @@
+<section style="display: block;clear: both">
+  <div class="breadcrumb">
+    <div>All Trains</div>
+  </div>
+</section>
+<table class="table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Route</th>
+    <th>Number</th>
+    <th>Seats Quantity</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let train of trains">
+    <td>{{ train._id }}</td>
+    <td>{{ train.name }}</td>
+    <td>{{ train.route }}</td>
+    <td>{{ train.number }}</td>
+    <td>{{ train.seatsQuantity }}</td>
+    <td>
+      <a href="/train/edit/{{train._id}}}" class="btn btn-default">Edit</a>
+      <a href="/train/remove/{{train._id}}" class="btn btn-default">Delete</a>
+    </td>
+  </tr>
+  </tbody>
+</table>

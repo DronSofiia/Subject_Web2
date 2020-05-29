@@ -1,0 +1,27 @@
+<section style="display: block;clear: both">
+<div class="breadcrumb">
+  <div>All Passengers</div>
+</div>
+</section>
+<table class="table">
+<thead>
+<tr>
+  <th>ID</th>
+  <th>Name</th>
+  <th>Surname</th>
+  <th>Passport ID</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let passenger of passengers">
+  <td>{{ passenger._id }}</td>
+  <td>{{ passenger.name }}</td>
+  <td>{{ passenger.surName }}</td>
+  <td>{{ passenger.passportID }}</td>
+  <td>
+<a href="/passenger/edit/{{passenger._id}}}" class="btn btn-default">Edit</a>
+<a href="/passenger/remove/{{passenger._id}}" class="btn btn-default">Delete</a>
+  </td>
+</tr>
+</tbody>
+</table>

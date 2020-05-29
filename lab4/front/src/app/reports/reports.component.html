@@ -1,0 +1,57 @@
+<section style="display: block;clear: both">
+  <div class="breadcrumb">
+    <div>Most popular routes</div>
+  </div>
+</section>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Route</th>
+    <th>Tickets count</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let mstPop of mostPopular">
+    <td>{{ mstPop.direction }}</td>
+    <td>{{ mstPop.ticketCount }}</td>
+  </tr>
+  </tbody>
+</table>
+
+<section style="display: block;clear: both">
+<div class="breadcrumb">
+  <div>Most profitable routes</div>
+</div>
+</section>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Route</th>
+    <th>Summary profit</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let mstProf of mostProfitable">
+    <td>{{ mstProf.direction }}</td>
+    <td>{{ mstProf.sum }}</td>
+  </tr>
+  </tbody>
+</table>
+
+<section style="display: block;clear: both">
+  <div class="breadcrumb">
+    <div>Routes with no tickets sold</div>
+  </div>
+</section>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Route</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let without of withoutTickets">
+    <td>{{ without.direction }}</td>
+  </tr>
+  </tbody>
+</table>

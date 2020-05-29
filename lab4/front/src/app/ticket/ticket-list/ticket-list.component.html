@@ -1,0 +1,33 @@
+<section style="display: block;clear: both">
+  <div class="breadcrumb">
+    <div>All Tickets</div>
+  </div>
+</section>
+<table class="table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Number</th>
+    <th>Price</th>
+    <th>Passenger</th>
+    <th>Train</th>
+    <th>Seat Number</th>
+    <th>Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let ticket of tickets">
+    <td>{{ ticket._id }}</td>
+    <td>{{ ticket.number }}</td>
+    <td>{{ ticket.price }}</td>
+    <td>{{ ticket.passenger.name }} {{ ticket.passenger.surName }} {{ ticket.passenger.passportID }}</td>
+    <td>{{ ticket.train.name }} {{ ticket.train.route }} {{ ticket.train.number }}</td>
+    <td>{{ ticket.seatNumber }}</td>
+    <td>{{ ticket.date }}</td>
+    <td>
+      <a href="/ticket/edit/{{ticket._id}}}" class="btn btn-default">Edit</a>
+      <a href="/ticket/remove/{{ticket._id}}" class="btn btn-default">Delete</a>
+    </td>
+  </tr>
+  </tbody>
+</table>

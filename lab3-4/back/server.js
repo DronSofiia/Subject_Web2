@@ -1,5 +1,12 @@
 ﻿'use strict'
 
+// add 
+// var path = require('path')
+// var express = require('express')
+// var app = express()
+
+// app.use('/assets', express.static(path.join(__dirname, "../assets")))
+
 const express = require('express')
 const logger = require('morgan')
 const bodyParser = require('body-parser')
@@ -24,7 +31,7 @@ app.use(bodyParser.json())
 // app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(express.static(__dirname))
-
+app.use(express.static(__dirname + '/public'))
 app.use(corsMiddleware())
 app.use('/', indexRoutes)
 app.use('/location', locationRoutes)
